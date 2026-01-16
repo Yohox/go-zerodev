@@ -164,8 +164,9 @@ func (*EntrypointClient07) PackUserOperation(op *UserOperation) ([]byte, error) 
 
 // computeKey generates a key for an account using separators.
 func computeKey(account common.Address) *big.Int {
-	partialHex := account.Hex()[5:10]
-	return new(big.Int).SetBytes([]byte(keySeparatorStart + partialHex + keySeparatorEnd))
+	return big.NewInt(0)
+	//partialHex := account.Hex()[5:10]
+	//return new(big.Int).SetBytes([]byte(keySeparatorStart + partialHex + keySeparatorEnd))
 }
 
 // createPackedBuffer combines two byte slices into a single buffer with padding.
