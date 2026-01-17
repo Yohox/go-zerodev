@@ -167,8 +167,8 @@ func (c *Client) GetUserOperationAndHashToSign(sender common.Address, callData *
 	op.PaymasterData = sponsorResponse.PaymasterData
 	op.PreVerificationGas = sponsorResponse.PreVerificationGas
 	op.VerificationGasLimit = sponsorResponse.VerificationGasLimit
-	op.PaymasterVerificationGasLimit = sponsorResponse.PaymasterVerificationGasLimit
-	op.PaymasterPostOpGasLimit = sponsorResponse.PaymasterPostOpGasLimit
+	//op.PaymasterVerificationGasLimit = sponsorResponse.PaymasterVerificationGasLimit
+	//op.PaymasterPostOpGasLimit = sponsorResponse.PaymasterPostOpGasLimit
 	op.CallGasLimit = sponsorResponse.CallGasLimit
 
 	opHash, err := c.EntryPoint.GetUserOperationHash(&op)
