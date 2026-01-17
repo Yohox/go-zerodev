@@ -163,12 +163,12 @@ func (c *Client) GetUserOperationAndHashToSign(sender common.Address, callData *
 		return nil, nil, err
 	}
 
-	op.Paymaster = sponsorResponse.Paymaster
-	op.PaymasterData = sponsorResponse.PaymasterData
+	op.Paymaster = make([]byte, 0)
+	op.PaymasterData = make([]byte, 0)
 	op.PreVerificationGas = sponsorResponse.PreVerificationGas
 	op.VerificationGasLimit = sponsorResponse.VerificationGasLimit
-	//op.PaymasterVerificationGasLimit = sponsorResponse.PaymasterVerificationGasLimit
-	//op.PaymasterPostOpGasLimit = sponsorResponse.PaymasterPostOpGasLimit
+	op.PaymasterVerificationGasLimit = big.NewInt(0)
+	op.PaymasterPostOpGasLimit = big.NewInt(0)
 	op.CallGasLimit = sponsorResponse.CallGasLimit
 
 	opHash, err := c.EntryPoint.GetUserOperationHash(&op)
