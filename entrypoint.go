@@ -144,7 +144,7 @@ func (*EntrypointClient07) PackUserOperation(op *UserOperation) ([]byte, error) 
 	//	op.PaymasterData,
 	//)
 
-	hashedPaymasterAndData := crypto.Keccak256Hash(make([]byte, 0))
+	hashedPaymasterAndData := crypto.Keccak256Hash(common.FromHex("0x"))
 
 	packed, err := args.Pack(
 		op.Sender,
