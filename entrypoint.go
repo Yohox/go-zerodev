@@ -137,12 +137,12 @@ func (*EntrypointClient07) PackUserOperation(op *UserOperation) ([]byte, error) 
 		op.MaxFeePerGas.Bytes(),
 	)
 
-	paymasterAndData := createPaymasterDataBuffer(
-		op.Paymaster,
-		op.PaymasterVerificationGasLimit.Bytes(),
-		op.PaymasterPostOpGasLimit.Bytes(),
-		op.PaymasterData,
-	)
+	//paymasterAndData := createPaymasterDataBuffer(
+	//	op.Paymaster,
+	//	op.PaymasterVerificationGasLimit.Bytes(),
+	//	op.PaymasterPostOpGasLimit.Bytes(),
+	//	op.PaymasterData,
+	//)
 
 	//hashedPaymasterAndData := crypto.Keccak256Hash(paymasterAndData.Bytes())
 
