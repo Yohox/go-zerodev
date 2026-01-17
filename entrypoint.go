@@ -144,7 +144,7 @@ func (*EntrypointClient07) PackUserOperation(op *UserOperation) ([]byte, error) 
 		op.PaymasterData,
 	)
 
-	hashedPaymasterAndData := crypto.Keccak256Hash(paymasterAndData.Bytes())
+	//hashedPaymasterAndData := crypto.Keccak256Hash(paymasterAndData.Bytes())
 
 	packed, err := args.Pack(
 		op.Sender,
@@ -154,7 +154,7 @@ func (*EntrypointClient07) PackUserOperation(op *UserOperation) ([]byte, error) 
 		toArray32(accountGasLimits),
 		op.PreVerificationGas,
 		toArray32(gasFees),
-		hashedPaymasterAndData,
+		common.Hash{},
 	)
 	if err != nil {
 		return nil, err
